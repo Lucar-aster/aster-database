@@ -76,5 +76,5 @@ if ordine_filtro:
     for item in docs.data:
         d = item['documenti']
         st.write(f"📄 **{d['nome']}**")
-        mostra_percorso_pulito(d['percorso_locale'])
+        mostra_percorso_pulito(d['percorso'])
         st.divider()
