@@ -33,7 +33,7 @@ with st.sidebar:
 st.header("📂 Registra Documento su più Ordini")
 
 # 1. Seleziona Ordini (anche di commesse diverse se vuoi)
-tutti_ordini = conn.table("ordini").select("id, nome_ordine").execute()
+tutti_ordini = conn.table("ordini").select("id, nome").execute()
 dizionario_ordini = {o['nome']: o['id'] for o in tutti_ordini.data}
 
 ordini_scelti = st.multiselect("Seleziona uno o più Ordini/Sottogruppi", list(dizionario_ordini.keys()))
