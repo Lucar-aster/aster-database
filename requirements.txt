@@ -1,3 +1,2 @@
-supabase
+Supabase
 streamlit
-SupabaseConnection
