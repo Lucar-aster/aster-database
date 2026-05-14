@@ -1,2 +1,3 @@
 Supabase
 streamlit
+st-supabase-connection
