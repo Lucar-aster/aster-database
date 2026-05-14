@@ -1,5 +1,13 @@
 import streamlit as st
 from st_supabase_connection import SupabaseConnection
+import pandas as pd
+
+def mostra_percorso_pulito(percorso):
+    clean_path = percorso.strip().replace('"', '').replace("'", "")
+    # Mostra il percorso in un box grigio chiaro facile da selezionare
+    st.info(f"📍 {clean_path}")
+    # Forniamo anche il comando veloce per il terminale se servisse
+    st.caption("Seleziona il testo sopra e premi Ctrl+C")
 
 # Configurazione Pagina
 st.set_page_config(page_title="Gestore Commesse", layout="wide")
@@ -68,4 +76,5 @@ if ordine_filtro:
     for item in docs.data:
         d = item['documenti']
         st.write(f"📄 **{d['nome']}**")
-        st.code(d['percorso'])
+        mostra_percorso_pulito(d['percorso_locale'])
+        st.divider()
